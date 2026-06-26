@@ -1,11 +1,11 @@
 import cv2
 
 class WebcamAccess:
-    def __init__(self, camera_index=0, flip=True):
+    def __init__(self, camera_index=0, flip=True, fps=30):
         self.camera_index = camera_index
         self.flip = flip
         self.cap = cv2.VideoCapture(camera_index)
-
+        self.cap.set(cv2.CAP_PROP_FPS, fps)
     def is_opened(self):
         return self.cap is not None and self.cap.isOpened()
 
