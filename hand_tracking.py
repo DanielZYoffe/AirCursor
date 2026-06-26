@@ -70,7 +70,7 @@ class HolisticHandTracker:
 
 def main():
     tracker = HolisticHandTracker()
-    webcam = webcam_access.WebcamAccess(0)
+    webcam = webcam_access.WebcamAccess(1)
 
     def callback(frame):
         return tracker.process(frame)
