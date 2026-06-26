@@ -1,7 +1,7 @@
 import cv2
 
 class WebcamAccess:
-    def __init__(self, camera_index=1):
+    def __init__(self, camera_index=0):
         self.camera_index = camera_index
         self.cap = cv2.VideoCapture(camera_index)
 
@@ -49,5 +49,5 @@ if __name__ == "__main__":
     def identity(frame):
         return frame
 
-    webcam = WebcamAccess(1)
+    webcam = WebcamAccess(0)
     webcam.run(identity)
